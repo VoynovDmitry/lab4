@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int solution(char * a)
+{
+	int answer = 0, summand = 0, sign = 1;
+	for (int i = 0; i < strlen(a);i++)
+		if (isdigit(a[i]))
+		{
+			summand = summand * 10 + (a[i] - '0');
+		}
+		else
+		{
+			answer = answer + sign*summand;
+			if (a[i] == '+') sign = 1;
+			else sign = -1;
+			summand = 0;
+		}
+	answer = answer + sign*summand;
+	return answer;
+}
+
+
+int main()
+{
+	
+	return 0;
+}
